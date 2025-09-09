@@ -8,7 +8,7 @@ You can install this app using the [bench](https://github.com/frappe/bench) CLI:
 
 ```bash
 cd $PATH_TO_YOUR_BENCH
-bench get-app https://github.com/khayamkhan852/inv_custom_reports.git --branch develop
+bench get-app https://github.com/khayamkhan852/inv_custom_reports.git
 bench install-app inv_custom_reports
 ```
 

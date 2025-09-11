@@ -192,7 +192,7 @@ def get_gl_entries(filters, accounting_dimensions):
 			name as gl_entry, posting_date, account, party_type, party,
 			voucher_type, voucher_subtype, voucher_no, {dimension_fields}
 			cost_center, project, {transaction_currency_fields}
-			against_voucher_type, against_voucher, account_currency,
+			against_voucher_type, owner as created_by, against_voucher, account_currency,
 			against, is_opening, creation {select_fields}
 		from `tabGL Entry`
 		where company=%(company)s {get_conditions(filters)}
@@ -698,6 +698,13 @@ def get_columns(filters):
 			"options": "voucher_type",
 			"width": 180,
 		},
+		{
+        	"label": _("Created By"),
+        	"fieldname": "created_by",
+        	"fieldtype": "Link",
+        	"options": "User",
+        	"width": 150,
+    	},		
 		{"label": _("Against Account"), "fieldname": "against", "width": 120},
 		{"label": _("Party Type"), "fieldname": "party_type", "width": 100},
 		{"label": _("Party"), "fieldname": "party", "width": 100},
